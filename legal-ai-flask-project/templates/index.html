@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Legal Simplifier</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <h1>Legal Document Simplifier</h1>
+    <p><strong>Privacy note:</strong> stays on this server — not legal advice.</p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label>Upload document:</label>
+      <input type="file" name="file" accept=".pdf,.txt" required>
+      <br><br>
+
+      <label>Choose explanation level:</label>
+      <select name="level">
+        <option value="very_basic">Very Basic</option>
+        <option value="medium" selected>Medium</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+      <br><br>
+
+      <label>Choose language:</label>
+      <select name="language">
+        {% for lang in languages %}
+          <option value="{{ lang }}">{{ lang|capitalize }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+
+      <button type="submit">Upload and Simplify</button>
+    </form>
+  </body>
+</html>
