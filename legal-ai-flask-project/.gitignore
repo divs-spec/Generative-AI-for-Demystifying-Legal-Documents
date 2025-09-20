@@ -1,0 +1,4 @@
+# Ignore uploaded user files
+data/uploads/*
+# But keep the empty folder
+!data/uploads/.gitkeep
