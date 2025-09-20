@@ -13,13 +13,50 @@ This project uses **Generative AI** (transformers) with a **Flask** web app to s
 ## Features
 
 ✅ Simplify legal documents into plain language
+
 ✅ Multiple explanation levels: Very Basic → Advanced
+
 ✅ Multi-language support (English, Hindi, Chinese, Spanish, Japanese, etc.)
+
 ✅ Upload documents (PDF, TXT)
+
 ✅ Interactive Question-Answering (ask about uploaded document)
+
 ✅ Fine-tuning option with `annotations.jsonl` dataset
+
 ✅ Frontend built with HTML, CSS, and JavaScript
+
 ✅ Backend powered by Flask + Hugging Face Transformers
+
+---
+
+## Core Features
+
+🔹 Natural Language Simplification
+
+🔹 Hierarchical Abstraction Levels
+
+🔹 Multilingual Rendering
+
+🔹 Document Embedding + Vector Search
+
+🔹 Domain-Specific Fine-Tuning
+
+🔹 End-to-End Pipeline — Covers preprocessing (PDF → text), simplification, translation, storage, and retrieval in one unified framework.
+
+---
+
+## Societal Benefits
+
+✅ Legal Accessibility — Empowers average citizens to interpret rental agreements, loan contracts, and terms of service without requiring specialized legal literacy.
+
+✅ Consumer Protection — Highlights obligations, risks, and penalty clauses that are often obscured in dense contractual text.
+
+✅ Linguistic Inclusivity — Bridges the gap for non-English speakers by providing localized explanations in their native language.
+
+✅ Educational Utility — Assists students, paralegals, and small business owners in learning contractual norms and legal reasoning.
+
+✅ Democratization of Legal Knowledge — Reduces dependency on costly legal intermediaries for basic interpretative tasks.
 
 ---
 
@@ -209,6 +246,24 @@ python app.py
 * Some translations rely on Hugging Face MarianMT; not all languages may be equally strong.
 * Long documents may be chunked; very large contracts may take longer.
 * For production, deploy with Gunicorn + Nginx (or Cloud Run).
+
+---
+
+## Future Extensions
+
+⚙️ Clause Risk Classification — Highlight unfair terms and risky obligations.
+
+🔍 Regulatory Compliance Checker — Map clauses against jurisdictional compliance benchmarks.
+
+📊 Explainability Layer — Provide attention-visualization for model interpretability.
+
+☁️ Cloud-Native Deployment — Containerization via Docker + deployment on Google Cloud Run or Kubernetes.
+
+---
+
+## Conclusion
+
+This project operationalizes AI-driven legal simplification with a focus on human accessibility, linguistic equity, and social empowerment. By bridging the gap between legal complexity and public comprehension, it enhances transparency, reduces exploitation risks, and contributes to a more informed civil society.
 
 ---
 
