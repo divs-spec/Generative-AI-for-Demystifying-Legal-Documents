@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <h1>Clause Simplifications ({{ level }} level in {{ lang }})</h1>
+    <a href="/">Back</a>
+    <ul>
+      {% for original, simple in clauses %}
+        <li>
+          <details>
+            <summary>{{ original[:120]|e }}...</summary>
+            <p><strong>Plain language:</strong> {{ simple|e }}</p>
+            <p><em>Original:</em> {{ original|e }}</p>
+          </details>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h2>Ask a question about the document</h2>
+    <form id="qa-form" onsubmit="ask(event)">
+      <input name="question" id="question" placeholder="Type your question">
+      <input type="hidden" id="language" value="{{ lang }}">
+      <button type="submit">Ask</button>
+    </form>
+    <pre id="answer"></pre>
+
+    <script>
+      async function ask(e){
+        e.preventDefault();
+        const q = document.getElementById('question').value;
+        const lang = document.getElementById('language').value;
+        const res = await fetch('/ask', {
+          method:'POST', 
+          headers:{'Content-Type':'application/x-www-form-urlencoded'}, 
+          body: new URLSearchParams({question:q, language:lang})
+        });
+        const j = await res.json();
+        document.getElementById('answer').innerText = JSON.stringify(j, null, 2);
+      }
+    </script>
+  </body>
+</html>
